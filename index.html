@@ -3,19 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Название страницы</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>HTML, CSS, JS Руководство</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Обеспечивает, что шапка будет поверх другого контента */
+        }
+        nav {
+            position: fixed;
+            top: 100px; /* Расположим под шапкой */
+            width: 100%;
+            background-color: #444;
+            z-index: 999;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: left;
+            border-bottom: 2px solid #333;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border: 1px solid transparent;
+            border-bottom: none;
+            border-radius: 5px 5px 0 0;
+            background-color: #555;
+        }
+        nav ul li a:hover {
+            background-color: #666;
+        }
+        nav ul li a.active {
+            background-color: #333;
+            border-color: #333;
+            border-bottom: 1px solid #333;
+        }
+        main {
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            margin-top: 140px; /* Добавляем отступ, чтобы контент не перекрывался шапкой и навигацией */
+            margin-bottom: 60px; /* Добавляем отступ, чтобы контент не перекрывался футером */
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .result {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: right;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box; /* Учитывает паддинг в ширину */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>SweetHome</h1>
+        <h1>Руководство по HTML, CSS, JS</h1>
     </header>
-    <section>
-        <p>Первый сайт, опубликованный автором loga4</p>
-    </section>
+    <nav>
+        <ul>
+            <li><a href="#html">HTML</a></li>
+            <li><a href="#css">CSS</a></li>
+            <li><a href="#js">JavaScript</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="html">
+            <h2>HTML (HyperText Markup Language)</h2>
+            <p>HTML - это язык разметки, который используется для создания структуры веб-страниц. Основные элементы включают:</p>
+            <ul>
+                <li><code>&lt;html&gt;</code> - Корневой элемент, содержащий весь HTML-документ.</li>
+                <li><code>&lt;head&gt;</code> - Секция для мета-информации, скриптов и стилей.</li>
+                <li><code>&lt;title&gt;</code> - Заголовок страницы, отображаемый в браузере.</li>
+                <li><code>&lt;body&gt;</code> - Основное содержимое страницы.</li>
+                <li><code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code> - Заголовки от самого большого (<code>&lt;h1&gt;</code>) до самого маленького (<code>&lt;h6&gt;</code>).</li>
+                <li><code>&lt;p&gt;</code> - Абзац текста.</li>
+                <li><code>&lt;a&gt;</code> - Ссылка на другую страницу или ресурс.</li>
+                <li><code>&lt;img&gt;</code> - Изображение на странице.</li>
+                <li><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code> - Неупорядоченный и упорядоченный списки.</li>
+                <li><code>&lt;div&gt;</code>, <code>&lt;span&gt;</code> - Блочные и строчные контейнеры для элементов.</li>
+                <li><code>&lt;footer&gt;</code> - Элемент футера, который обычно содержит контактную информацию, авторские права и другие сведения, располагаемые внизу страницы.</li>
+            </ul>
+
+            <h3>Пример HTML-документа</h3>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Пример страницы&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Заголовок страницы&lt;/h1&gt;
+    &lt;p&gt;Это пример абзаца текста.&lt;/p&gt;
+    &lt;a href="https://example.com"&gt;Ссылка на сайт&lt;/a&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Элемент списка 1&lt;/li&gt;
+        &lt;li&gt;Элемент списка 2&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;footer&gt;
+        &lt;p&gt;© loga4&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <div class="result">
+                <h1>Заголовок страницы</h1>
+                <p>Это пример абзаца текста.</p>
+                <a href="https://example.com">Ссылка на сайт</a>
+                <ul>
+                    <li>Элемент списка 1</li>
+                    <li>Элемент списка 2</li>
+                </ul>
+                <footer>
+                    <p>© loga4</p>
+                </footer>
+            </div>
+        </section>
+        
+        <section id="css">
+            <h2>CSS (Cascading Style Sheets)</h2>
+            <p>CSS используется для стилизации HTML-документов. С его помощью можно изменять внешний вид элементов, включая цвета, шрифты, отступы и расположение на странице.</p>
+            
+            <h3>Пример подключения CSS</h3>
+            <p>Стили можно подключить различными способами:</p>
+            <ul>
+                <li><code>Встроенные стили</code> - использование атрибута <code>style</code> внутри HTML-тега.</li>
+                <li><code>Внутренние стили</code> - определение стилей внутри тега <code>&lt;style&gt;</code> в HTML-документе.</li>
+                <li><code>Внешний файл стилей</code> - подключение внешнего файла с расширением <code>.css</code>.</li>
+            </ul>
+            
+            <h4>Пример использования встроенных стилей:</h4>
+            <pre><code>&lt;p style="color: blue; font-size: 18px;"&gt;Этот текст синим цветом и размером шрифта 18px.&lt;/p&gt;</code></pre>
+
+            <div class="result">
+                <p style="color: blue; font-size: 18px;">Этот текст синим цветом и размером шрифта 18px.</p>
+            </div>
+
+            <h4>Пример использования внутренних стилей:</h4>
+            <pre><code>&lt;style&gt;
+    p {
+        color: blue;
+        font-size: 18px;
+    }
+&lt;/style&gt;
+&lt;p&gt;Этот текст синим цветом и размером шрифта 18px.&lt;/p&gt;</code></pre>
+
+            <div class="result">
+                <style>
+                    .internal-css-example p {
+                        color: blue;
+                        font-size: 18px;
+                    }
+                </style>
+                <div class="internal-css-example">
+                    <p>Этот текст синим цветом и размером шрифта 18px.</p>
+                </div>
+            </div>
+
+            <h4>Пример подключения внешнего файла стилей:</h4>
+            <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+
+            <h3>CSS-селекторы</h3>
+            <p>Селекторы используются для указания, к каким элементам HTML следует применять стили:</p>
+            <ul>
+                <li><code>Тег</code> - селектор по тегу, например, <code>p</code>.</li>
+                <li><code>Класс</code> - селектор по классу, например, <code>.classname</code>.</li>
+                <li><code>ID</code> - селектор по ID, например, <code>#idname</code>.</li>
+            </ul>
+
+            <h4>Пример использования CSS-селекторов:</h4>
+            <pre><code>&lt;style&gt;
+    p {
+        color: red;
+    }
+    .highlight {
+        background-color: yellow;
+    }
+    #unique {
+        font-weight: bold;
+    }
+&lt;/style&gt;
+
+&lt;p&gt;Обычный текст&lt;/p&gt;
+&lt;p class="highlight"&gt;Выделенный текст&lt;/p&gt;
+&lt;p id="unique"&gt;Уникальный текст&lt;/p&gt;</code></pre>
+
+            <div class="result">
+                <style>
+                    .css-selectors-example p {
+                        color: red;
+                    }
+                    .css-selectors-example .highlight {
+                        background-color: yellow;
+                    }
+                    .css-selectors-example #unique {
+                        font-weight: bold;
+                    }
+                </style>
+                <div class="css-selectors-example">
+                    <p>Обычный текст</p>
+                    <p class="highlight">Выделенный текст</p>
+                    <p id="unique">Уникальный текст</p>
+                </div>
+            </div>
+
+            <h3>Основные свойства CSS</h3>
+            <ul>
+                <li><code>color</code> - цвет текста.</li>
+                <li><code>background-color</code> - цвет фона.</li>
+                <li><code>font-size</code> - размер шрифта.</li>
+                <li><code>margin</code> - внешние отступы элемента.</li>
+                <li><code>padding</code> - внутренние отступы элемента.</li>
+                <li><code>border</code> - граница вокруг элемента.</li>
+                <li><code>display</code> - тип отображения элемента (например, <code>block</code>, <code>inline</code>, <code>none</code>).</li>
+            </ul>
+
+            <h4>Пример использования CSS-свойств:</h4>
+            <pre><code>&lt;style&gt;
+    .box {
+        color: white;
+        background-color: blue;
+        font-size: 20px;
+        padding: 10px;
+        margin: 20px;
+        border: 2px solid black;
+        display: inline-block;
+    }
+&lt;/style&gt;
+
+&lt;div class="box"&gt;Это стилизованный блок&lt;/div&gt;</code></pre>
+
+            <div class="result">
+                <style>
+                    .box {
+                        color: white;
+                        background-color: blue;
+                        font-size: 20px;
+                        padding: 10px;
+                        margin: 20px;
+                        border: 2px solid black;
+                        display: inline-block;
+                    }
+                </style>
+                <div class="box">Это стилизованный блок</div>
+            </div>
+        </section>
+        
+        <!-- Секция для JavaScript будет добавлена позже -->
+    </main>
     <footer>
         <p>© loga4</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
